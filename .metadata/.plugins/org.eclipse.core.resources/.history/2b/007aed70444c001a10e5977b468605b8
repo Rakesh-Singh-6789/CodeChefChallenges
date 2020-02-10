@@ -15,7 +15,7 @@ public class TheatreProblem {
 		while(cases-->0){
 			int n=Integer.parseInt(br.readLine());
 			int arr[][]=new int[4][4];
-			Integer singleArr[]=new Integer[16];
+			int singleArr[]=new int[16];
 			while(n-->0){
 				st= new StringTokenizer(br.readLine());
 				String m=st.nextToken();
@@ -55,18 +55,12 @@ public class TheatreProblem {
 					}
 			}
 			
-			Arrays.sort(singleArr,Collections.reverseOrder());
+			Arrays.sort(singleArr);
 			
-			/*for(int i=0;i<16;i++){
+			for(int i=0;i<16;i++){
 				System.out.print(singleArr[i]+ " ");
 			}
-			System.out.println();*/
-			
-			
-			HashSet<Integer> rowSet=new HashSet<>();
-			HashSet<Integer> colSet=new HashSet<>();
-			
-			
+			System.out.println();
 		}
 
 	}

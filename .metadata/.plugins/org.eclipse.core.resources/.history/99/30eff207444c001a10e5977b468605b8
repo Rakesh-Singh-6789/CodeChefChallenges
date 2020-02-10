@@ -10,19 +10,18 @@ public class TheatreProblem {
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 		int cases=Integer.parseInt(br.readLine());
 		StringTokenizer st;
-		
+		int arr[][]=new int[4][4];
 		
 		while(cases-->0){
 			int n=Integer.parseInt(br.readLine());
-			int arr[][]=new int[4][4];
-			Integer singleArr[]=new Integer[16];
+			
+			
 			while(n-->0){
 				st= new StringTokenizer(br.readLine());
 				String m=st.nextToken();
 				String t=st.nextToken();
 				
 				int row,col;
-				
 				if(m.equals("A")){
 					row=0;
 				}else if(m.equals("B")){
@@ -48,23 +47,16 @@ public class TheatreProblem {
 				
 				
 			}
-			int k=0;
+			System.out.println();
+			
 			for(int i=0;i<4;i++){
 				for(int j=0;j<4;j++){
-					singleArr[k++]=arr[i][j];
-					}
+					System.out.print(arr[i][j]+ " ");
+					arr[i][j]=0;
+				}
+				System.out.println();
 			}
 			
-			Arrays.sort(singleArr,Collections.reverseOrder());
-			
-			/*for(int i=0;i<16;i++){
-				System.out.print(singleArr[i]+ " ");
-			}
-			System.out.println();*/
-			
-			
-			HashSet<Integer> rowSet=new HashSet<>();
-			HashSet<Integer> colSet=new HashSet<>();
 			
 			
 		}

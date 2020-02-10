@@ -57,16 +57,10 @@ public class TheatreProblem {
 			
 			Arrays.sort(singleArr,Collections.reverseOrder());
 			
-			/*for(int i=0;i<16;i++){
+			for(int i=0;i<16;i++){
 				System.out.print(singleArr[i]+ " ");
 			}
-			System.out.println();*/
-			
-			
-			HashSet<Integer> rowSet=new HashSet<>();
-			HashSet<Integer> colSet=new HashSet<>();
-			
-			
+			System.out.println();
 		}
 
 	}
