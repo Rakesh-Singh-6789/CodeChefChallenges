@@ -1,0 +1,49 @@
+package juneChallenge;
+
+import java.io.*;
+import java.math.BigInteger;
+import java.util.StringTokenizer;
+
+public class Q3_chefAndIngredients {
+	public static void main (String[] args) throws IOException
+	{
+		// your code goes here
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+	    PrintWriter out=new PrintWriter(System.out);
+	    
+		int t=Integer.parseInt(br.readLine());
+	    int modulus=1000000007;
+	    while(t-->0){
+	        StringTokenizer st=new StringTokenizer(br.readLine());
+	        long n=Long.parseLong(st.nextToken());
+	        long k=Long.parseLong(st.nextToken());
+	        
+	        //long ans=(k-1)%modulus;
+	        
+	        long diff,numberOfTerms,ans=0;        
+	        long diff3k=k-1;
+	        //System.out.println(tempLast+" diff3k:"+diff3k);
+	        BigInteger biAns=new BigInteger("0");
+	        if(diff3k>0){
+	            diff=n-1;	            
+	            //tempFirst=diff3k;
+	            numberOfTerms=(long) Math.ceil(1.0*diff3k/diff);
+	            long last=diff3k-(numberOfTerms-1)*diff;
+            	ans=(long)(((1.0*numberOfTerms)/2)*(1.0*(diff3k+last)))%modulus;
+            	BigInteger binumberOfTerms=new BigInteger(String.valueOf(numberOfTerms));
+            	BigInteger bidiff=new BigInteger(String.valueOf(diff));
+            	BigInteger bilast=new BigInteger(String.valueOf(last));
+            	BigInteger bidiff3k=new BigInteger(String.valueOf(diff3k));
+            	BigInteger bi2=new BigInteger("2");
+            	BigInteger bimodulus=new BigInteger("1000000007");
+                biAns=bidiff3k.add(bidiff).multiply(binumberOfTerms).divide(bi2).mod(bimodulus);
+            	
+            	
+	        }
+	        
+	        out.println(biAns);
+	    }
+	    out.flush();
+	    out.close();
+	}
+}

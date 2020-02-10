@@ -1,0 +1,73 @@
+package JulyChallnege;
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+import java.math.*;
+
+public class Guess3 {
+	
+	static final int MAX_SIZE = 1000000000; 
+	// isPrime[] : isPrime[i] is true if number is prime 
+	// prime[] : stores all prime number less than N 
+	// SPF[] that store smallest prime factor of number 
+	// [for Exp : smallest prime factor of '8' and '16' 
+	// is '2' so we put SPF[8] = 2 , SPF[16] = 2 ] 
+	static ArrayList<Boolean> isprime = new ArrayList<>(MAX_SIZE); 
+	static ArrayList<Integer> prime = new ArrayList<>(); 
+	static ArrayList<Integer> SPF = new ArrayList<>(MAX_SIZE); 
+	
+	// method generate all prime number less then N in O(n) 
+	static void manipulated_seive(int N) 
+	{ 
+		// 0 and 1 are not prime 
+		isprime.set(0, false); 
+		isprime.set(1, false); 
+		
+		// Fill rest of the entries 
+		for (int i=2; i<N ; i++) 
+		{ 
+			// If isPrime[i] == True then i is 
+			// prime number 
+			if (isprime.get(i)) 
+			{ 
+				// put i into prime[] ArrayList 
+				prime.add(i); 
+	
+				// A prime number is its own smallest 
+				// prime factor 
+				SPF.set(i,i); 
+			} 
+			for (int j=0; 
+				j < prime.size() && 
+				i*prime.get(j) < N && prime.get(j) <= SPF.get(i); 
+				j++) 
+			{ 
+				isprime.set(i*prime.get(j),false); 
+	
+				// put smallest prime factor of i*prime[j] 
+				SPF.set(i*prime.get(j),prime.get(j)) ; 
+			} 
+		} 
+	}
+	
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		for (int i = 0; i < MAX_SIZE; i++){ 
+			isprime.add(true); 
+			SPF.add(2); 
+		} 
+		
+		manipulated_seive(MAX_SIZE);
+		
+		int count=0;
+		for (int i=0; i<prime.size() && prime.get(i) <= N ; i++) 
+			count++;
+      
+      System.out.println(count);
+
+	}
+
+}

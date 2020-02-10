@@ -1,0 +1,43 @@
+package JulyChallnege;
+
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+import java.math.*;
+
+public class GuessPrime {
+
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		HashMap<Integer,Integer> map=new HashMap<>();
+		int count=1;
+		BigInteger bi;
+		for(int i=2;i<=100;i++){
+		    bi=BigInteger.valueOf(i);
+		    if(bi.isProbablePrime(1)){
+		        map.put(i,count++);
+		    }
+		    
+		}
+		System.out.println(map);
+		
+		
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		int t=Integer.parseInt(br.readLine());
+                                                		
+		
+		while(t-->0){
+		    int x=13623;
+		    System.out.println(1+" "+x);
+		    int rem=Integer.parseInt(br.readLine());
+		    
+		    
+		    
+		    
+		    
+		    
+		}
+	}
+}

@@ -1,0 +1,19 @@
+package Assignment2;
+
+import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Q1_Push_0_toEnd {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int[] arr={ 0 ,1 ,2,0,3,0 };
+		List al = new ArrayList<>(Arrays.asList(arr));
+		
+		System.out.println(al);
+
+	}
+
+}

@@ -1,0 +1,144 @@
+package LongChallengeApril;
+
+import java.io.*;
+import java.util.*;
+
+import javafx.util.Pair;
+
+public class Fence2 {
+
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		int t=Integer.parseInt(br.readLine());
+		StringTokenizer st;
+		
+		while(t-->0){
+		    long fence=0;
+		    
+		    st=new StringTokenizer(br.readLine());
+		    int n=Integer.parseInt(st.nextToken());
+		    int m=Integer.parseInt(st.nextToken());
+		    int k=Integer.parseInt(st.nextToken());
+
+            HashMap<Pair <Integer,Integer>,Boolean> map=new HashMap<>();
+            Pair <Integer,Integer> pair;
+		    for(int l=0;l<k;l++){
+		        st=new StringTokenizer(br.readLine());
+		        int i=Integer.parseInt(st.nextToken());
+		        int j=Integer.parseInt(st.nextToken());
+		        
+		        pair=new Pair<>(i,j);
+		        map.put(pair,true);
+		           
+		        
+		        
+		    }
+		    
+		  /* for(int i=1;i<=n;i++){
+		        if(map.containsKey(i)){
+		            HashSet<Integer> set1=new HashSet<>(map.get(i));
+		            
+		            for(int l=0;l<set1.size();l++){
+		            	
+		            }
+		            Iterator<Integer> iterator=set1.iterator();
+		            while(iterator.hasNext()){
+		            	int j=iterator.next();
+		            
+		            //for horizontal
+		            	
+		            if(i==1&&j==1 || i==1&&j==m || i==n&&j==1 || i==n&&j==m){
+			            fence+=2;
+			        }else if(i==1 || j==1 || i==n || j==m){
+			            fence+=1;			            
+			        }	
+		            	
+		            	if(i==1){
+		            		fence++;
+		            	}
+		            	
+		            	
+		            
+		            	if(set1.contains(j+1)==false){
+		            		fence++;
+		            	}
+		            	if(set1.contains(j-1)==false){
+		            		fence++;
+		            	}		            
+		            
+		            //for vertical
+		            	 if(map.containsKey(i-1)){
+				            	HashSet<Integer> set3=new HashSet<>(map.get(i-1));
+				            	if(set3.contains(j)==false){
+				            		fence++;
+				            	}
+				            }else{
+				            	fence++;
+				            }	
+		            	
+		            	
+		            if(map.containsKey(i+1)){
+		            	HashSet<Integer> set2=new HashSet<>(map.get(i+1));
+		            	if(set2.contains(j)==false){
+		            		fence++;
+		            	}
+		            }else{
+		            	fence++;
+		            }
+		            
+		            }
+		            
+		        }
+		    }*/
+		    
+		    Set<Pair<Integer,Integer>> keySet=map.keySet();
+		    int i,j;
+		    Pair<Integer,Integer> tempPair;
+		    for(Pair<Integer,Integer> pairI:keySet){
+		    	i=pairI.getKey();
+		    	j=pairI.getValue();
+		    	
+		    	//horizontal
+		    	tempPair=new Pair<Integer, Integer>(i,j+1);
+		    	if(map.containsKey(tempPair)==false){
+                   fence++;
+		    	}else{
+		    		fence++;
+		    	}
+		    	tempPair=new Pair<Integer, Integer>(i,j-1);
+		    	if(map.containsKey(tempPair)==false){
+                   fence++;
+		    	}else{
+		    		fence++;
+		    	}
+		    	
+		    	
+		    	//vertical
+		    	tempPair=new Pair<Integer, Integer>(i-1,j);
+		    	if(map.containsKey(tempPair)==false){
+                   fence++;
+		    	}else{
+		    		fence++;
+		    	}
+		    	tempPair=new Pair<Integer, Integer>(i+1,j);
+		    	if(map.containsKey(tempPair)==false){
+                   fence++;
+		    	}else{
+		    		fence++;
+		    	}
+		    	
+		    	
+		    }
+		   
+		   
+		   
+		    
+		    //System.out.println(map);
+		    System.out.println(fence);
+		    
+		}
+	}
+}

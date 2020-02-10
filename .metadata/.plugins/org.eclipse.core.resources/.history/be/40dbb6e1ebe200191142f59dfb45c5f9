@@ -1,0 +1,71 @@
+import java.io.*;
+import java.util.*;
+import java.math.*;
+
+public class Teach {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		PrintWriter out=new PrintWriter(System.out);
+		int t=Integer.parseInt(br.readLine());
+		  int caseN=1;
+		while(t-->0){
+			StringTokenizer st=new StringTokenizer(br.readLine());
+			int n=Integer.parseInt(st.nextToken());
+			int s=Integer.parseInt(st.nextToken());
+			HashSet<Integer> hSetArr[]=new HashSet[n];
+			long ans=0;
+			
+			
+			
+			for(int i=0;i<n;i++){
+				hSetArr[i]=new HashSet<>();
+				st=new StringTokenizer(br.readLine());
+				int number=Integer.parseInt(st.nextToken());
+				for(int j=0;j<number;j++){
+					hSetArr[i].add(Integer.parseInt(st.nextToken()));
+				}				
+			}
+			
+			for(int i=0;i<n;i++){
+				
+				for(int j=0;j<n;j++){
+					if(i==j)
+						continue;
+					
+					HashSet<Integer> iSet=hSetArr[i];
+					HashSet<Integer> jSet=hSetArr[j]; 
+					 
+					if(iSet.size()>jSet.size()){
+						ans++;
+					}else{
+						
+						for(int iSkill : iSet){
+							if(jSet.contains(iSkill)==false){
+								ans++;
+							}
+						}
+						
+					}
+					
+					
+					
+				}
+			}
+		  
+		    		    	
+		    	
+		    
+		    out.println("Case #"+(caseN++)+": "+ans);
+		    //caseN++;
+			
+		}
+		out.flush();
+		out.close();
+		
+
+	}
+
+
+}

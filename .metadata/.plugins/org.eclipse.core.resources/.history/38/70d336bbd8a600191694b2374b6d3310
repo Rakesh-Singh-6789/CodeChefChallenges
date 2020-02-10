@@ -1,0 +1,133 @@
+package JulyChallnege;
+
+import java.util.*;
+
+import javax.print.attribute.standard.PrinterMakeAndModel;
+
+import java.lang.*;
+import java.io.*;
+import java.math.*;
+
+public class GuessPrime2 {
+
+	public static ArrayList<Integer> PrimeMaplist=new ArrayList<>(51000000);
+
+	static int ifnotPrime(int prime[], int x) 
+	{ 
+
+		return (prime[x/64] & (1 << ((x >> 1) & 31))); 
+	} 
+
+	// Marks x composite in prime[] 
+	static void makeComposite(int prime[], int x) 
+	{ 
+
+		prime[x/64] |= (1 << ((x >> 1) & 31)); 
+	} 
+
+	// Prints all prime numbers smaller than n. 
+	static void bitWiseSieve(int n) 
+	{ 
+		// Assuming that n takes 32 bits,  
+		// we reduce size to n/64 from n/2. 
+		int prime[] = new int[n/64 + 1]; 
+
+
+		// 2 is the only even prime so we 
+		// can ignore that loop starts from 
+		// 3 as we have used in sieve of 
+		// Eratosthenes . 
+		for (int i = 3; i * i <= n; i += 2) { 
+
+			// If i is prime, mark all its  
+			// multiples as composite 
+			if (ifnotPrime(prime, i)==0) 
+				for (int j = i * i, k = i << 1;  
+						j < n; j += k) 
+					makeComposite(prime, j); 
+		} 
+
+		PrimeMaplist.add(2);
+		//int count=1;
+		for (int i = 3; i <= n; i += 2) 
+			if (ifnotPrime(prime, i) == 0) 
+				PrimeMaplist.add(i);
+
+
+	} 
+
+	public static void main(String[] args) throws NumberFormatException, IOException {
+
+		bitWiseSieve(1000000000);
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		int t=Integer.parseInt(br.readLine());
+                                                		
+		
+		while(t-->0){
+		    int x=31627;
+		    long xSq=31627*31627;
+		    System.out.println(1+" "+x);
+		    int rem1=Integer.parseInt(br.readLine());
+		    
+		  
+		    ArrayList<Integer> list=new ArrayList<>();
+		    for(int i:PrimeMaplist){
+		    	if(xSq%i == rem1){
+		    		list.add(i);
+		    	}
+		    }
+		    
+		    //System.out.println("primeListSize: "+list.size());
+		    int maxPrime=list.get(list.size()-1);
+		    int maxPrimeRoot= (int) Math.ceil(Math.sqrt(maxPrime));
+		   
+		    
+		    //System.out.println(1+" "+maxPrimeRoot);
+		    
+		    //int rem2=Integer.parseInt(br.readLine());
+		    int rem2;
+		    boolean isUnique=false;
+		   	int var=maxPrimeRoot+1;
+		   	int x2Sq=var*var;
+		   	HashSet<Integer> set;
+		   	int countSize=0;
+		    while(isUnique!=true){
+		    	//System.out.println("hitWhile : "+countSize+1);
+		    	countSize=0;
+		    	set=new HashSet<>();
+		    	var--;
+		    	x2Sq=var*var;
+		    	
+		    for(int i: list){
+		    	rem2=x2Sq%i;
+		    	if(set.contains(rem2)){
+		    		break;
+		    	}else{
+		    		countSize++;
+		    		set.add(rem2);
+		    		if(countSize==list.size()){
+		    			isUnique=true;
+		    			break;
+		    		}		    		
+		    	}
+		    		
+		    }
+		    }
+		    System.out.println(1+" "+var);
+		    int p2=Integer.parseInt(br.readLine());
+		    int ans=0;
+		    
+		    for(int i:  list){
+		    	//System.out.print("check: "+i);
+		    	if(x2Sq%i==p2){
+		    		ans=i;
+		    		System.out.println(2+" "+i);
+		    		break;
+		    	}
+		    }
+		    String str=br.readLine();   
+		    //System.out.println(var+" : "+ans);
+		    
+		}
+	}
+}

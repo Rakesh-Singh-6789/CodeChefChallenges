@@ -1,0 +1,163 @@
+package LongChallengeApril;
+
+import java.util.*;
+import java.io.*;
+
+public class Fence {
+
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		int t=Integer.parseInt(br.readLine());
+		StringTokenizer st;
+		
+		while(t-->0){
+		    long fence=0;
+		    
+		    st=new StringTokenizer(br.readLine());
+		    int n=Integer.parseInt(st.nextToken());
+		    int m=Integer.parseInt(st.nextToken());
+		    int k=Integer.parseInt(st.nextToken());
+
+            HashMap<Integer,HashSet<Integer>> map=new HashMap<>();
+            
+            
+
+		    for(int l=0;l<k;l++){
+		        st=new StringTokenizer(br.readLine());
+		        int i=Integer.parseInt(st.nextToken());
+		        int j=Integer.parseInt(st.nextToken());
+		       /* if(i==1&&j==1 || i==m&&j==1 || i==n&&j==1 || i==n&&j==m){
+		            Corners++;
+		        }else if(i==1 || j==1 || i==n || j==m){
+		            sideCells++;
+		        }*/
+		        
+		        if(map.containsKey(i)){
+		            HashSet<Integer> set=new HashSet<>(map.get(i));
+		            set.add(j);
+		            map.put(i,set);
+		        }else{
+		            HashSet<Integer> set=new HashSet<>();
+		            set.add(j);
+		            map.put(i,set);
+		        }
+		        
+		        
+		        
+		        
+		        
+		        
+		    }
+		    
+		    
+		    
+		  /* for(int i=1;i<=kSet.size();i++){
+		        if(map.containsKey(i)){
+		            HashSet<Integer> set1=new HashSet<>(map.get(i));
+		            
+		            for(int l=0;l<set1.size();l++){
+		            	
+		            }
+		            Iterator<Integer> iterator=set1.iterator();
+		            while(iterator.hasNext()){
+		            	int j=iterator.next();
+		            
+		            //for horizontal
+		            	
+		            if(i==1&&j==1 || i==1&&j==m || i==n&&j==1 || i==n&&j==m){
+			            fence+=2;
+			        }else if(i==1 || j==1 || i==n || j==m){
+			            fence+=1;			            
+			        }	
+		            	
+		            	if(i==1){
+		            		fence++;
+		            	}
+		            	
+		            	
+		            
+		            	if(set1.contains(j+1)==false){
+		            		fence++;
+		            	}
+		            	if(set1.contains(j-1)==false){
+		            		fence++;
+		            	}		            
+		            
+		            //for vertical
+		            	 if(map.containsKey(i-1)){
+				            	HashSet<Integer> set3=new HashSet<>(map.get(i-1));
+				            	if(set3.contains(j)==false){
+				            		fence++;
+				            	}
+				            }else{
+				            	fence++;
+				            }	
+		            	
+		            	
+		            if(map.containsKey(i+1)){
+		            	HashSet<Integer> set2=new HashSet<>(map.get(i+1));
+		            	if(set2.contains(j)==false){
+		            		fence++;
+		            	}
+		            }else{
+		            	fence++;
+		            }
+		            
+		            }
+		            
+		        }
+		    }*/
+		    HashSet<Integer> kSet=new HashSet<>(map.keySet());
+		    Iterator<Integer> iterator=kSet.iterator();
+		    HashSet<Integer> temp;
+		    int i,j;
+            while(iterator.hasNext()){
+            	i=iterator.next();
+            	HashSet<Integer> rowSet=new HashSet<>(map.get(i));
+            	Iterator<Integer> jIterator= rowSet.iterator();
+            	
+            	while(jIterator.hasNext()){
+            		j=jIterator.next();
+            		
+            		//horizontal
+            		
+            		if(rowSet.contains(j+1)==false){
+	            		fence++;
+	            	}
+	            	if(rowSet.contains(j-1)==false){
+	            		fence++;
+	            	}
+	            	
+	            	//vertical
+	            	
+	            	if(kSet.contains(i-1)){
+	            		temp=new HashSet<>(map.get(i-1));
+	            		if(temp.contains(j)==false){
+	            			fence++;
+	            		}
+	            		
+	            	}else{
+	            		fence++;
+	            	}
+	            	
+	            	if(kSet.contains(i+1)){
+	            		temp=new HashSet<>(map.get(i+1));
+	            		if(temp.contains(j)==false){
+	            			fence++;
+	            		}	            		
+	            	}else{
+	            		fence++;
+	            	}
+	            	
+            	}
+            }
+		    
+		    //System.out.println(map);
+		    System.out.println(fence);
+		    
+		}
+	}
+}

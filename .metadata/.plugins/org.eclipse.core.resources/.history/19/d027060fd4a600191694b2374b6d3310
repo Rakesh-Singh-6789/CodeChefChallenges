@@ -1,0 +1,139 @@
+package JulyChallnege;
+
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+import java.math.*;
+
+public class GuessPrime {
+	  
+	
+	 public static ArrayList<Integer> PrimeMaplist=new ArrayList<>(51000000);
+	
+	 public static void sieveOfEratosthenes(int n) 
+	    { 
+	        // Create a boolean array "prime[0..n]" and initialize 
+	        // all entries it as true. A value in prime[i] will 
+	        // finally be false if i is Not a prime, else true. 
+	        boolean prime[] = new boolean[n+1]; 
+	       /* for(int i=0;i<n;i++) 
+	            prime[i] = true;*/
+	        prime[0]=true;
+	        prime[1]=true;
+	          
+	        for(int p = 2; p*p <=n; p++) 
+	        { 
+	            // If prime[p] is not changed, then it is a prime 
+	            if(prime[p] == false) 
+	            { 
+	                // Update all multiples of p 
+	            	
+	                for(int i = p*p; i <= n; i += p) 
+	                    prime[i] = true; 
+	            } 
+	        } 
+	          
+	        //int count=0;
+	        // Print all prime numbers 
+	        for(int i = 2; i <= n; i++) 
+	        { 
+	            if(prime[i] == false){ 
+	            	//count++;
+	            	PrimeMaplist.add(i);
+	                //System.out.print(i + " "); 
+	            }
+	        }
+	      System.out.println("soe Finished"); 
+	    }
+
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		/*ArrayList<Integer> map=new ArrayList<>();
+		int count=0;
+		BigInteger bi;
+		for(int i=2;i<=1000;i++){
+		    bi=BigInteger.valueOf(i);
+		    if(bi.isProbablePrime(1)){
+		    	count++;
+		        map.add(i);
+		    }			
+		}
+		System.out.println(count+" "+map.size());*/
+		sieveOfEratosthenes(1000000000);
+		//System.out.println(list.size());
+		
+		
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		int t=Integer.parseInt(br.readLine());
+                                                		
+		
+		while(t-->0){
+		    int x=31627;
+		    long xSq=31627*31627;
+		    System.out.println(1+" "+x);
+		    int rem1=Integer.parseInt(br.readLine());
+		    
+		  
+		    ArrayList<Integer> list=new ArrayList<>();
+		    for(int i:PrimeMaplist){
+		    	if(xSq%i == rem1){
+		    		list.add(i);
+		    	}
+		    }
+		    
+		    //System.out.println("primeListSize: "+list.size());
+		    int maxPrime=list.get(list.size()-1);
+		    int maxPrimeRoot= (int) Math.ceil(Math.sqrt(maxPrime));
+		   
+		    
+		    //System.out.println(1+" "+maxPrimeRoot);
+		    
+		    //int rem2=Integer.parseInt(br.readLine());
+		    int rem2;
+		    boolean isUnique=false;
+		   	int var=maxPrimeRoot+1;
+		   	int x2Sq=var*var;
+		   	HashSet<Integer> set;
+		   	int countSize=0;
+		    while(isUnique!=true){
+		    	//System.out.println("hitWhile : "+countSize+1);
+		    	countSize=0;
+		    	set=new HashSet<>();
+		    	var--;
+		    	x2Sq=var*var;
+		    	
+		    for(int i: list){
+		    	rem2=x2Sq%i;
+		    	if(set.contains(rem2)){
+		    		break;
+		    	}else{
+		    		countSize++;
+		    		set.add(rem2);
+		    		if(countSize==list.size()){
+		    			isUnique=true;
+		    			break;
+		    		}		    		
+		    	}
+		    		
+		    }
+		    }
+		    System.out.println(1+" "+var);
+		    int p2=Integer.parseInt(br.readLine());
+		    int ans=0;
+		    
+		    for(int i:  list){
+		    	//System.out.print("check: "+i);
+		    	if(x2Sq%i==p2){
+		    		ans=i;
+		    		System.out.println(2+" "+i);
+		    		break;
+		    	}
+		    }
+		    String str=br.readLine();   
+		    //System.out.println(var+" : "+ans);
+		    
+		}
+	}
+}

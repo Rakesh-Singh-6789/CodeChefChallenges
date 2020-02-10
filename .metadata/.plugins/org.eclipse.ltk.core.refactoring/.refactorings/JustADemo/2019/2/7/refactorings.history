@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;balanceString&apos; to &apos;ModularDivision&apos;&#x0D;&#x0A;- Original project: &apos;JustADemo&apos;&#x0D;&#x0A;- Original element: &apos;balanceString&apos;&#x0D;&#x0A;- Renamed element: &apos;ModularDivision&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;balanceString&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{balanceString.java[balanceString" matchStrategy="1" name="ModularDivision" qualified="false" references="true" similarDeclarations="false" stamp="1549823712390" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,15 @@
+package LongChallengeApril;
+
+import java.util.*;
+import java.io.*;
+import javafx.util.*;
+
+public class Check {
+
+	 public static void main(String[] args) {
+	       String a="a"+" "+"b";
+	       a="b";
+	       System.out.println(a);
+	 }
+	}
+

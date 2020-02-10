@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;assignment4_classes_and_objects&apos; to &apos;assignment5_classes_and_objects&apos;&#x0D;&#x0A;- Original project: &apos;Cn&apos;&#x0D;&#x0A;- Original element: &apos;Cn/src/assignment4_classes_and_objects&apos;&#x0D;&#x0A;- Renamed element: &apos;Cn/src/assignment5_classes_and_objects&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;assignment4_classes_and_objects&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;assignment4_classes_and_objects" name="assignment5_classes_and_objects" qualified="false" references="true" stamp="1561882844245" textual="false" version="1.0"/>
+</session>

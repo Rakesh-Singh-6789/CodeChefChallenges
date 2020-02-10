@@ -1,0 +1,20 @@
+
+public class BestIndex_SpecialSum {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	System.out.println(no_of_terms(0,6));
+
+	}
+	static int no_of_terms(int i,int n)
+	{
+	int l = n-i+1,no,ans = 0;
+	for(int k=1;;k++)
+	{
+	no = k*(k+1)/2;
+	if(no<l) ans=no;
+	else return ans;
+	}
+	}
+
+}
