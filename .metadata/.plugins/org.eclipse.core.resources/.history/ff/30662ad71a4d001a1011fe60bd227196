@@ -149,8 +149,7 @@ public class TheatreProblem {
 	}
 	private static void FindMax4(int[][] arr, ArrayList<Integer> list, HashSet<Integer> rowSet, HashSet<Integer> colSet,
 			int maxSum) {
-		int remCol=0;
-		int remRow=0;
+		int rem=0;
 		for(int i=0;i<4;i++){
 			if(rowSet.contains(i))
 				   continue;
@@ -160,13 +159,12 @@ public class TheatreProblem {
 				}
 
 				list.add(arr[i][j]);			
-				rowSet.add(i);
-				colSet.add(j);
-			    remCol=j;
-			    remRow=i;
+				/*rowSet.add(i);
+				colSet.add(j);*/
+			    rem=j;			
            
             //Collections.sort(list);
-            if(list.size()>-1){
+            if(list.size()==4){
             	 count++;
             	 for(Integer num: list){
      				System.out.print(num+" ");
@@ -179,8 +177,7 @@ public class TheatreProblem {
 			//System.out.println(" in last :"+i+" "+j);
 		}
 	}
-		rowSet.remove(remRow);
-		rowSet.remove(remCol);
+		
 		
 	}
 
