@@ -9,7 +9,6 @@
 <fullyQualifiedTypeName name="java.lang.Character"/>
 <fullyQualifiedTypeName name="marchLongChallengePackage.PiyushQuest1.FastReader"/>
 <fullyQualifiedTypeName name="javax.print.attribute.HashPrintServiceAttributeSet"/>
-<fullyQualifiedTypeName name="java.util.Collections"/>
 <fullyQualifiedTypeName name="java.util.Map.Entry"/>
 <fullyQualifiedTypeName name="javax.swing.plaf.synth.SynthSeparatorUI"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
@@ -17,7 +16,6 @@
 <fullyQualifiedTypeName name="javax.management.modelmbean.ModelMBeanInfoSupport"/>
 <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
 <fullyQualifiedTypeName name="java.util.Set"/>
-<fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="juneChallenge.Q3_chefAndIngredients"/>
 <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
@@ -34,7 +32,6 @@
 <fullyQualifiedTypeName name="BinaryTrees.ArrayListHeadLevelWise.Node"/>
 <fullyQualifiedTypeName name="maxDifferenceCandy"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
-<fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="Assignment1.CheckFirst.BinaryTreeNode"/>
@@ -43,7 +40,10 @@
 <fullyQualifiedTypeName name="Assignment1.FreqCount"/>
 <fullyQualifiedTypeName name="Assignment1.FreqCount.myCount"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="java.util.StringTokenizer"/>
-<fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="java.math.BigInteger"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.util.StringTokenizer"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
 </qualifiedTypeNameHistroy>
