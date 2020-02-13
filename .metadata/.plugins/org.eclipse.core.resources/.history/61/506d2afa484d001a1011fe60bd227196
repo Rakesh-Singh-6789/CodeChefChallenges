@@ -168,7 +168,6 @@ public class TheatreProblem {
             //Collections.sort(list);
             if(list.size()>-1){
             	 count++;
-            	 Collections.sort(list);
             	 for(Integer num: list){
      				System.out.print(num+" ");
      			}

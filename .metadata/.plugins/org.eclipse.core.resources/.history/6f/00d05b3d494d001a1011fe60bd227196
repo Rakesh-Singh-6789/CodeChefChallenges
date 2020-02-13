@@ -1,11 +1,13 @@
 
 import java.io.*;
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class TheatreProblem {
 	public static int maxSum=0;
 	public static int totalSum=0;
 	public static int count=0;
+	public static ArrayList<Integer> cords;
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 
@@ -82,14 +84,18 @@ public class TheatreProblem {
 	}
 	public static void FindMax(int arr[][]){
 
-
+      cords=new ArrayList<>();
 
 		for(int i=0;i<4;i++){
 			for(int j=0;j<4;j++){
 				HashSet<Integer> rowSet=new HashSet<>();
 				HashSet<Integer> colSet=new HashSet<>();
 				ArrayList<Integer> list=new ArrayList<>();
-				list.add(arr[i][j]);			
+				list.add(arr[i][j]);
+				
+				cords.add(i);
+				cords.add(j);
+				
 				rowSet.add(i);
 				colSet.add(j);
 				FindMax2(arr,list,rowSet,colSet,maxSum);
@@ -97,6 +103,10 @@ public class TheatreProblem {
 				
 			}
 
+		}
+		
+		for(int i=0;i<cords.size();i=i+2){
+			System.out.print(cords.get(i)+" "+cords.get(i+1));
 		}
 
 
@@ -112,7 +122,11 @@ public class TheatreProblem {
 					continue;
 				}
 
-				list.add(arr[i][j]);			
+				list.add(arr[i][j]);
+				
+				cords.add(i);
+				cords.add(j);
+				
 				rowSet.add(i);
 				colSet.add(j);
 				FindMax3(arr,list,rowSet,colSet,maxSum);	
@@ -135,7 +149,10 @@ public class TheatreProblem {
 					continue;
 				}
 
-				list.add(arr[i][j]);			
+				list.add(arr[i][j]);
+				
+				cords.add(i);
+				cords.add(j);
 				rowSet.add(i);
 				colSet.add(j);
 				FindMax4(arr,list,rowSet,colSet,maxSum);	
@@ -159,7 +176,9 @@ public class TheatreProblem {
 					continue;
 				}
 
-				list.add(arr[i][j]);			
+				list.add(arr[i][j]);
+				cords.add(i);
+				cords.add(j);
 				rowSet.add(i);
 				colSet.add(j);
 			    remCol=j;
@@ -168,7 +187,6 @@ public class TheatreProblem {
             //Collections.sort(list);
             if(list.size()>-1){
             	 count++;
-            	 Collections.sort(list);
             	 for(Integer num: list){
      				System.out.print(num+" ");
      			}
