@@ -27,9 +27,77 @@ public class NoChange {
 			for(int i=0;i<n;i++){
 				arr[i]=Integer.parseInt(st.nextToken());
 				sum+=arr[i];
+				ans[i]=1;
 			}
 			
-			if()
+			int counterHit=0;
+			long minOverpay=Integer.MAX_VALUE;
+			if(sum>p){
+				for(int i=0;i<n;i++){
+				   sum-=arr[i];
+				   ans[i]-=1;
+				   if(sum>p){
+					   continue;
+				   }else if(sum==p){
+					   counterHit++;
+					   if(counterHit==n){
+						   System.out.println("NO");
+						   break;
+					   }
+					   ans[i]+=1;
+					   sum+=arr[i];
+				   }else{
+					   ans[i]+=1;
+					   sum+=arr[i];
+					   System.out.print("YES ");
+					   for(int l=0;l<n;l++){
+						   System.out.print(ans[l]+" ");
+					   }
+					   System.out.println();
+					   break;
+				   }
+				}
+			}else if(sum==p){
+				if(n==1){
+					System.out.println("NO");
+				}else{
+					ans[0]-=1;
+					ans[1]+=1;
+					System.out.print("YES ");
+					   for(int l=0;l<n;l++){
+						   System.out.print(ans[l]+" ");
+					   }
+					   System.out.println();
+					   break;
+				}
+			}else{				
+				int i=0;
+				while(true){					
+					sum+=arr[i];
+					ans[i]+=1;
+					if(sum==p){
+						if(n==1){
+							System.out.println("NO");
+							break;
+						}						
+						sum-=arr[i];
+						ans[i]-=1;
+						i++;
+					}else if(sum<p){
+						continue;
+					}else{
+						System.out.print("YES ");
+						   for(int l=0;l<n;l++){
+							   System.out.print(ans[l]+" ");
+						   }
+						   System.out.println();
+						   break;
+					}
+				}
+				
+				
+				
+			}
 			
 			
 		}
