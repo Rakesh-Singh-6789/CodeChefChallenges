@@ -1,0 +1,49 @@
+import java.io.*;
+import java.util.*;
+
+public class XORmint {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+        
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		PrintWriter out=new PrintWriter(System.out);
+		int t=Integer.parseInt(br.readLine());
+		StringTokenizer st;
+		while(t-->0){
+			st=new StringTokenizer(br.readLine());
+			int n=Integer.parseInt(st.nextToken());
+			int q=Integer.parseInt(st.nextToken());
+			
+			int arr[]=new int[n];
+			st=new StringTokenizer(br.readLine());
+			for(int i=0;i<n;i++){
+				arr[i]=Integer.parseInt(st.nextToken());
+			}
+			
+			while(q-->0){
+				int p=Integer.parseInt(br.readLine());
+				int num,countBit,odd=0,even=0;
+				for(int i=0;i<n;i++){
+					num=arr[i]^p;
+					countBit=Integer.bitCount(num);
+					
+					if(countBit%2==0){
+						even++;
+					}else{
+						odd++;
+					}
+					
+				}
+				
+				
+				out.println(even+" "+odd);
+				
+			}
+			out.flush();
+		
+		}
+		out.close();
+	}
+
+}
