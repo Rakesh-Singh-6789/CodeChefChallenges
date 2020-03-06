@@ -1,0 +1,44 @@
+import java.util.*;
+import java.io.*;
+
+public class ChefAndPintu {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		int t=Integer.parseInt(br.readLine());
+		StringTokenizer st,st1;
+		while(t-->0){
+			st=new StringTokenizer(br.readLine());
+			int n=Integer.parseInt(st.nextToken());
+			int m=Integer.parseInt(st.nextToken());
+			
+			
+			st=new StringTokenizer(br.readLine());
+			st1=new StringTokenizer(br.readLine());
+			
+			HashMap<Integer,Integer> map=new HashMap<>();
+			int min=Integer.MAX_VALUE;
+			while(n-->0){
+				int a=Integer.parseInt(st.nextToken());
+				int b=Integer.parseInt(st.nextToken());
+				int val=0;
+				if(map.containsKey(a)){
+					val=map.get(a)+b;
+				
+				}else{
+					val=b;
+				}
+				if(val<min){
+					min=val;
+				}
+				map.put(a, val);
+			}
+			
+			System.out.println(min);
+			
+		}
+
+	}
+
+}

@@ -1,0 +1,23 @@
+import java.util.*;
+import java.io.*;
+
+public class ChefAndPintu {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		int t=Integer.parseInt(br.readLine());
+		StringTokenizer st;
+		while(t-->0){
+			st=new StringTokenizer(br.readLine());
+			int n=Integer.parseInt(st.nextToken());
+			int m=Integer.parseInt(st.nextToken());
+			
+			HashMap<Integer,Integer> map=new HashMap();
+			
+			
+		}
+
+	}
+
+}
