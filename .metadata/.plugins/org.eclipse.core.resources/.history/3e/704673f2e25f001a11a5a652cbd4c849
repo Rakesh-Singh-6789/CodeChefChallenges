@@ -2,25 +2,16 @@ import java.io.*;
 import java.util.*;
 
 public class XORmint {
+	
+
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
         
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 		PrintWriter out=new PrintWriter(System.out);
-		
-		int size=100000000;
-		boolean bitArray[]=new boolean[size];
-		
-		for(int i=1;i<size;i++){		
-				if(Integer.bitCount(i)%2==0){
-					bitArray[i]=true;
-				}
-		}
-		System.out.println("stop");
-		
 		int t=Integer.parseInt(br.readLine());
 		StringTokenizer st;
-		
+		HashMap<Integer,Integer> map=new HashMap<>();
 		while(t-->0){
 			st=new StringTokenizer(br.readLine());
 			int n=Integer.parseInt(st.nextToken());
@@ -34,32 +25,34 @@ public class XORmint {
 			
 			while(q-->0){
 				int p=Integer.parseInt(br.readLine());
-				int countBit,odd=0,even=0;
-				long num;
+				int num,countBit,odd=0,even=0;
 				for(int i=0;i<n;i++){
-					num=arr[i]^p;					
-					if(num>size){
-						countBit=Long.bitCount(num);
-						if(countBit%2==0){
-							even++;
-						}
-					}else{
-						if(bitArray[(int) num]){
-							even++;
-						}
-						}
+					num=arr[i]^p;
 					
+					
+					if(map.containsKey(num)){
+						countBit=map.get(num);
+					}else{
+						countBit=Integer.bitCount(num);
+						map.put(num, countBit);
+					}
+					
+					
+					if(countBit%2==0){
+						even++;
+					}else{
+						odd++;
+					}
 					
 				}
 				
 				
-				out.println(even+" "+(n-even));
+				out.println(even+" "+odd);
 				
 			}
-			
+			out.flush();
 		
 		}
-		out.flush();
 		out.close();
 	}
 

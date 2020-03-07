@@ -2,24 +2,33 @@ import java.io.*;
 import java.util.*;
 
 public class XORmint {
+	
+	static int[] BitsSetTable256 = new int[256]; 
+	  
+    
+    public static void initialize() 
+    { 
+        BitsSetTable256[0] = 0; 
+        for (int i = 0; i < 256; i++) { 
+            BitsSetTable256[i] = (i & 1) + BitsSetTable256[i / 2]; 
+        } 
+    } 
+    public static int countSetBits(int n) 
+    { 
+        return (BitsSetTable256[n & 0xff] 
+                + BitsSetTable256[(n >> 8) & 0xff] 
+                + BitsSetTable256[(n >> 16) & 0xff] 
+                + BitsSetTable256[n >> 24]); 
+    } 
+
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
         
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 		PrintWriter out=new PrintWriter(System.out);
-		
-		int size=100000000;
-		boolean bitArray[]=new boolean[size];
-		
-		for(int i=1;i<size;i++){		
-				if(Integer.bitCount(i)%2==0){
-					bitArray[i]=true;
-				}
-		}
-		System.out.println("stop");
-		
 		int t=Integer.parseInt(br.readLine());
 		StringTokenizer st;
+		initialize();
 		
 		while(t-->0){
 			st=new StringTokenizer(br.readLine());
@@ -34,32 +43,26 @@ public class XORmint {
 			
 			while(q-->0){
 				int p=Integer.parseInt(br.readLine());
-				int countBit,odd=0,even=0;
-				long num;
+				int num,countBit,odd=0,even=0;
 				for(int i=0;i<n;i++){
-					num=arr[i]^p;					
-					if(num>size){
-						countBit=Long.bitCount(num);
-						if(countBit%2==0){
-							even++;
-						}
-					}else{
-						if(bitArray[(int) num]){
-							even++;
-						}
-						}
+					num=arr[i]^p;
+					countBit=countSetBits(num);
 					
+					if(countBit%2==0){
+						even++;
+					}else{
+						odd++;
+					}
 					
 				}
 				
 				
-				out.println(even+" "+(n-even));
+				out.println(even+" "+odd);
 				
 			}
-			
+			out.flush();
 		
 		}
-		out.flush();
 		out.close();
 	}
 
