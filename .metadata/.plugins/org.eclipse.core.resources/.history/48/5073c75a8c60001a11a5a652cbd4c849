@@ -2,8 +2,6 @@ import java.io.*;
 import java.util.*;
 
 public class XORmint {
-	
-	public static HashMap<Long,Boolean> map=new HashMap<>();
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
         
@@ -41,20 +39,10 @@ public class XORmint {
 				for(int i=0;i<n;i++){
 					num=arr[i]^p;					
 					if(num>size){
-						if(map.containsKey(num)){
-							if(map.get(num)){
-								even++;
-							}
-						}else{
-							countBit=Long.bitCount(num);
-							if(countBit%2==0){
-								map.put(num, true);
-								even++;
-							}else{
-								map.put(num, false);
-							}
+						countBit=Long.bitCount(num);
+						if(countBit%2==0){
+							even++;
 						}
-						
 					}else{
 						if(bitArray[(int) num]){
 							even++;
