@@ -5,21 +5,19 @@ public class XORmint {
 	
 	//public static HashMap<Long,Boolean> map=new HashMap<>();
 	
-	static int size=100000000;
-	static int bitArray[]=new int[size];
-	
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
         
 		//BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 		
+		int size=100000000;
+		boolean bitArray[]=new boolean[size];
 		
-		
-		/*for(int i=1;i<size;i++){		
+		for(int i=1;i<size;i++){		
 				if(Integer.bitCount(i)%2==0){
 					bitArray[i]=true;
 				}
-		}*/
+		}
 		
 		Reader scan=new Reader();
 		
@@ -39,22 +37,22 @@ public class XORmint {
 			
 			while(q-->0){
 				int p=scan.nextInt();
-				int num,countBit,even=0;
+				int num,countBit,odd=0,even=0;
 				for(int i=0;i<n;i++){
 					num=arr[i]^p;
-					
-					if(bitArray[num]==0){
+					if(num>size){
 						countBit=Integer.bitCount(num);
-						bitArray[num]=countBit;
+						if(countBit%2==0){
+							even++;
+						}
 					}else{
-						countBit=bitArray[num];
-					}
-					if(countBit%2==0){
-						even++;
-					}
-					
+						if(bitArray[num]){
+							even++;
+						}
+						}
 					
 				}
+				
 				
 				out.println(even+" "+(n-even));
 				

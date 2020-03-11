@@ -1,0 +1,93 @@
+import java.io.*;
+import java.util.*;
+
+public class XORmint {
+	
+	//public static HashMap<Long,Boolean> map=new HashMap<>();
+	
+	 static int[] BitsSetTable256 = new int[256]; 
+	  
+	    
+	    public static void initialize() 
+	    { 
+	  
+	       
+	        BitsSetTable256[0] = 0; 
+	        for (int i = 0; i < 256; i++) { 
+	            BitsSetTable256[i] = (i & 1) + BitsSetTable256[i / 2]; 
+	        } 
+	    } 
+	  
+	   
+	    public static int countSetBits(int num) 
+	    { 
+	        return (BitsSetTable256[(num & 0xff)] 
+	                + BitsSetTable256[(num >> 8) & 0xff] 
+	                + BitsSetTable256[(num >> 16) & 0xff] 
+	                + BitsSetTable256[num >> 24]); 
+	    } 
+	  
+	
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+        
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		PrintWriter out=new PrintWriter(System.out);
+		 initialize();
+		int size=100000000;
+		boolean bitArray[]=new boolean[size];
+		
+		
+		
+		for(int i=1;i<size;i++){		
+				if(countSetBits(i)%2==0){
+					bitArray[i]=true;
+				}
+		}
+		System.out.println("stop");
+		
+		int t=Integer.parseInt(br.readLine());
+		StringTokenizer st;
+		
+		while(t-->0){
+			st=new StringTokenizer(br.readLine());
+			int n=Integer.parseInt(st.nextToken());
+			int q=Integer.parseInt(st.nextToken());
+			
+			int arr[]=new int[n];
+			st=new StringTokenizer(br.readLine());
+			for(int i=0;i<n;i++){
+				arr[i]=Integer.parseInt(st.nextToken());
+			}
+			
+			while(q-->0){
+				int p=Integer.parseInt(br.readLine());
+				int even=0;
+				long num;
+				for(int i=0;i<n;i++){
+					num=arr[i]^p;					
+					if(num>size){
+						if(Long.bitCount(num)%2==0)
+							even++;
+						
+					}else{
+						if(bitArray[(int) num]){
+							even++;
+						}
+						}
+					
+					
+				}
+				
+				
+				out.println(even+" "+(n-even));
+				
+			}
+			
+		
+		}
+		out.flush();
+		out.close();
+	}
+
+}
