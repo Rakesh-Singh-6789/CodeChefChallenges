@@ -10968,3 +10968,13 @@ Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Failure to fin
 
 !ENTRY org.eclipse.recommenders.models.rcp 1 0 2020-03-11 15:26:18.761
 !MESSAGE jre:jre:call:zip:1.0.0 could not be resolved from the model repositories. Are you offline?
+!SESSION 2020-03-12 14:05:18.118 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_211
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2020-03-12 14:05:34.767
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
