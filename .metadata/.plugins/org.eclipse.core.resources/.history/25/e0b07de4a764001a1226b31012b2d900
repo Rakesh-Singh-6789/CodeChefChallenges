@@ -19,7 +19,7 @@ public class Laser1 {
             int yPoints[]=new int[n+1];
             st=new StringTokenizer(br.readLine());
             
-            for(int i=1;i<=n;i++){
+            for(int i=1;i<n+1;i++){
             	
             	yPoints[i]=Integer.parseInt(st.nextToken());
             	
@@ -35,24 +35,39 @@ public class Laser1 {
             	
             	        	
             	while(true){
-            		if(xInc>=n || xInc>=x2){
+            		if(xInc>n || xInc>=x2){
             			break;
             		}
             		
-            		if(yPoints[xInc]==y){
-            			intersect++;
-            		}else if(yPoints[xInc+1]==y){
-            			intersect++;
-            		}else if(yPoints[xInc]>y && yPoints[xInc+1]<y){
-            			intersect++;
-            		}else if(yPoints[xInc]<y && yPoints[xInc+1]>y){
-            			intersect++;
+            		if(((y-yPoints[xInc])*(y-yPoints[xInc+1]))<0){
+            			if((xInc==x2 && y==yPoints[x2]) || (xInc==x1 && y==yPoints[x1] && xInc==n)){
+            				
+            			}else{
+            				intersect++;
+            				//System.out.println(xInc);
+            			}
+            			
+            			
+            			
+            		}else if(((y-yPoints[xInc])*(y-yPoints[xInc+1]))==0){
+            			
+            			if(y-yPoints[xInc]==0 && (y-yPoints[xInc+1]!=0)){
+            				
+            				
+            				
+            				
+            			}else if(y-yPoints[xInc]!=0 && (y-yPoints[xInc+1]==0)){
+            				
+            			}else{
+            				
+            			}
+            			
             		}
             		
             		xInc++;
             		
             	}
-            	System.out.println(intersect);
+            	System.out.println("ans"+intersect);
             	
             	
             	

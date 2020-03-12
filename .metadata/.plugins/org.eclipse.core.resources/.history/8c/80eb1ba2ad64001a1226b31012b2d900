@@ -47,10 +47,8 @@ public class XORmint {
 							even++;
 						}			
 					}else{
-						if(bitArray[arr[i]]^bitArray[p]==false){
+						if((bitArray[arr[i]] ==true && bitArray[p]==true) || (bitArray[arr[i]] ==false && bitArray[p]==false)){
 							even++;
-							
-							
 						}
 					}	
 					

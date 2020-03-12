@@ -52,7 +52,7 @@ public class Laser1 {
             		xInc++;
             		
             	}
-            	System.out.println(intersect);
+            	System.out.println("ans"+intersect);
             	
             	
             	
