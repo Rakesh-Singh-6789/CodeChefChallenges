@@ -16,7 +16,6 @@
 <fullyQualifiedTypeName name="javax.management.modelmbean.ModelMBeanInfoSupport"/>
 <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
 <fullyQualifiedTypeName name="java.util.Set"/>
-<fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="juneChallenge.Q3_chefAndIngredients"/>
 <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
 <fullyQualifiedTypeName name="java.util.List"/>
@@ -36,7 +35,6 @@
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="Assignment1.CheckFirst.BinaryTreeNode"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
-<fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="Assignment1.FreqCount"/>
 <fullyQualifiedTypeName name="Assignment1.FreqCount.myCount"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
@@ -46,4 +44,10 @@
 <fullyQualifiedTypeName name="java.util.Collections"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
+<fullyQualifiedTypeName name="java.io.BufferedOutputStream"/>
+<fullyQualifiedTypeName name="java.io.BufferedWriter"/>
+<fullyQualifiedTypeName name="java.io.OutputStreamWriter"/>
+<fullyQualifiedTypeName name="Break.Reader"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
 </qualifiedTypeNameHistroy>
