@@ -30,14 +30,12 @@
 <fullyQualifiedTypeName name="BinaryTrees.BinaryTreeNode"/>
 <fullyQualifiedTypeName name="BinaryTrees.ArrayListHeadLevelWise.Node"/>
 <fullyQualifiedTypeName name="maxDifferenceCandy"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="Assignment1.CheckFirst.BinaryTreeNode"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="Assignment1.FreqCount"/>
 <fullyQualifiedTypeName name="Assignment1.FreqCount.myCount"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.math.BigInteger"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
@@ -50,4 +48,8 @@
 <fullyQualifiedTypeName name="Break.Reader"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="javax.swing.plaf.basic.BasicInternalFrameTitlePane.MaximizeAction"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="CodeGladiatorQ2.Reader"/>
 </qualifiedTypeNameHistroy>
