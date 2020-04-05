@@ -35,8 +35,8 @@ public class WorkAssignment {
 			char couple = 'J';
 			
 			char output[]=new char[n];
-			Stack<int[]> JamieWorkStack=new Stack<>();
-			Stack<int[]> CameronWorkStack=new Stack<>();
+			Stack<int[]> JStack=new Stack<>();
+			Stack<int[]> cStack=new Stack<>();
 			
 			boolean isImpossible=false;
 			
@@ -61,27 +61,27 @@ public class WorkAssignment {
 	    	  
 	    	  if(i<matrixSorted.length-1 && isLap(matrixSorted[i], matrixSorted[i+1])){
 	    		  if(couple=='J'){
-	    			  JamieWorkStack.push(matrixSorted[i]);
-	    			  couple=changePerson(couple);
+	    			  JStack.push(matrixSorted[i]);
+	    			  couple=getcouple(couple);
 	    			  
-	    			  if(!CameronWorkStack.isEmpty() && isLap(CameronWorkStack.peek(),matrixSorted[i+1])){
+	    			  if(!cStack.isEmpty() && isLap(cStack.peek(),matrixSorted[i+1])){
 	    				  isImpossible=true;
 	    				  break;
 	    			  }
 	    		  }else{
-	    			  CameronWorkStack.push(matrixSorted[i]);
-	    			  couple=changePerson(couple);
+	    			  cStack.push(matrixSorted[i]);
+	    			  couple=getcouple(couple);
 	    			  
-	    			  if(!JamieWorkStack.isEmpty() && isLap(JamieWorkStack.peek(), matrixSorted[i+1])){
+	    			  if(!JStack.isEmpty() && isLap(JStack.peek(), matrixSorted[i+1])){
 	    				  isImpossible=true;
 	    				  break;
 	    			  }
 	    		  }
 	    	  }else{
 	    		  if(couple=='J'){
-	    			  JamieWorkStack.push(matrixSorted[i]);
+	    			  JStack.push(matrixSorted[i]);
 	    		  }else{
-	    			  CameronWorkStack.push(matrixSorted[i]);
+	    			  cStack.push(matrixSorted[i]);
 	    		  }
 	    	  }
 	      }
@@ -112,7 +112,7 @@ public class WorkAssignment {
 		
 	}
 
-	static char changePerson(char p){
+	static char getcouple(char p){
 		return p=='J'?'C':'J';
 	}
 	
