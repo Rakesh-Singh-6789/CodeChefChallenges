@@ -34,7 +34,7 @@ public class Covid19 {
 			if(arr[i]==1){
 				if(Math.abs(lastIndex-i)<6){
 					isFollowed=false;
-					//System.out.println(i+" "+Math.abs(lastIndex-i));
+					System.out.println(i+" "+Math.abs(lastIndex-i));
 					break;
 				}else{
 					lastIndex=i;
