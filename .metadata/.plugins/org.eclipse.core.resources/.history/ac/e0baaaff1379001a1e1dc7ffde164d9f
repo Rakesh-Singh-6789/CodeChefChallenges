@@ -1,0 +1,94 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
+public class UnitGCD {
+
+	static public void main(String[] args) throws Exception{
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		int t=Integer.parseInt(br.readLine());
+
+
+		while(t-->0){
+			solve(br);	
+		}
+
+	}
+
+	private static void solve(BufferedReader br) throws Exception {
+		// TODO Auto-generated method stub
+		int n=Integer.parseInt(br.readLine());
+		ArrayList<Integer> primeList=new ArrayList<>();
+
+		HashSet<Integer> set=new HashSet<>();
+		for(int i=1;i<=n;i++){
+			BigInteger bi=BigInteger.valueOf(i);
+			if(bi.isProbablePrime(1)){
+				primeList.add(i);
+				continue;
+			}
+			set.add(i);
+		}
+		ArrayList<ArrayList<Integer>> list=new ArrayList<>();
+		while(!set.isEmpty()){
+			Set<Integer> tempSet=new HashSet<>(set);
+
+			for(int element: tempSet){
+				BigInteger biEle=BigInteger.valueOf(element);
+				ArrayList<Integer> tempList=new ArrayList<>();
+
+				tempList.add(element);
+				set.remove(element);
+
+				for(int secondElement: tempSet){
+
+					BigInteger biSec=BigInteger.valueOf(secondElement);
+					int tempListSize=tempList.size();
+					boolean isCoPrime=true;
+
+
+
+					for(int i=0;i<tempListSize;i++){
+						int tempNum=tempList.get(i);
+						BigInteger biNum=BigInteger.valueOf(tempNum);
+						if(biNum.gcd(biSec)!=BigInteger.ONE){
+							isCoPrime=false;
+						}	    				
+					}
+					if(isCoPrime){
+						tempList.add(secondElement);
+					}
+				}
+
+				list.add(tempList);
+				tempSet=set;
+
+
+			}
+
+
+
+		}
+
+		int listSize=list.size()+1;
+		System.out.println(listSize);
+
+		for(int prime:primeList){
+			System.out.print(prime+" ");
+		}
+		System.out.println();
+		for(ArrayList<Integer> lists: list){
+			for(int number: lists){
+				System.out.print(number+" ");
+			}
+
+			System.out.println();
+		}
+
+
+	}
+
+}
