@@ -34,7 +34,7 @@ public class UnitGCD {
 		HashSet<Integer> doneSet=new HashSet<>();
 		
 		int loop=n-primeList.size();
-		while(!set.isEmpty()){
+		while(doneSet.size()<loop){
 			Set<Integer> tempSet=new HashSet<>(set);
 
 			for(int element: tempSet){
