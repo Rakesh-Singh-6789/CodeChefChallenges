@@ -48,26 +48,13 @@ public class Answers {
 		}*/
 		ArrayList<Integer> list=new ArrayList<>();
 		for(int i=0;i<N;i++){
-			int arr[]=new int[10];
+			
 			int sum=0;
 			for(int j=0;j<K;j++){
-				arr[answerArray[i][j]]++;
+				sum+=answerArray[i][j];
 				}
 			
-			int maxCount=Integer.MIN_VALUE;
-			int index=1;
-			for(int k=1;k<=M;k++){
-				
-				int ele=arr[k];
-				System.out.print(ele+" ");
-
-				if(ele>maxCount){
-					maxCount=ele;
-					index=k;
-				}
-			}
-			System.out.println();
-			int avg=index;	
+			int avg=sum/K;			
 			list.add(avg);
 		}
 		

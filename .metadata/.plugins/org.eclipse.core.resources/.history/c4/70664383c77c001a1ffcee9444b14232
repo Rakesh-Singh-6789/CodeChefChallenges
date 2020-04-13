@@ -55,19 +55,13 @@ public class Answers {
 				}
 			
 			int maxCount=Integer.MIN_VALUE;
-			int index=1;
-			for(int k=1;k<=M;k++){
-				
-				int ele=arr[k];
-				System.out.print(ele+" ");
-
+			for(int ele:arr){
 				if(ele>maxCount){
 					maxCount=ele;
-					index=k;
 				}
 			}
-			System.out.println();
-			int avg=index;	
+			
+			int avg=maxCount;	
 			list.add(avg);
 		}
 		

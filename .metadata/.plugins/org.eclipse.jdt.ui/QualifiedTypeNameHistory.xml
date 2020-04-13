@@ -26,7 +26,6 @@
 <fullyQualifiedTypeName name="BinaryTrees.BinaryTreeNode"/>
 <fullyQualifiedTypeName name="BinaryTrees.ArrayListHeadLevelWise.Node"/>
 <fullyQualifiedTypeName name="maxDifferenceCandy"/>
-<fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="Assignment1.CheckFirst.BinaryTreeNode"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="Assignment1.FreqCount"/>
@@ -42,18 +41,20 @@
 <fullyQualifiedTypeName name="java.util.Stack"/>
 <fullyQualifiedTypeName name="QualificationRound.WorkAssignment"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
-<fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="java.util.Comparator"/>
 <fullyQualifiedTypeName name="java.lang.Override"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
-<fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="java.util.Collections"/>
-<fullyQualifiedTypeName name="java.util.StringTokenizer"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
-<fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="java.util.StringTokenizer"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.math.BigInteger"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
 </qualifiedTypeNameHistroy>
