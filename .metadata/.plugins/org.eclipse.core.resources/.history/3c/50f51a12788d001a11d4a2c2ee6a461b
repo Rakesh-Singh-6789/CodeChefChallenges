@@ -1,0 +1,167 @@
+import java.util.Scanner;
+
+public class Fraction
+{
+   // member variables
+   private int numerator, denominator;  // stores the fraction data
+  
+   public Fraction(int numerator,int denominator)
+   {
+      this.numerator=numerator;
+      this.denominator=denominator;
+   }
+
+  
+   public int getNumerator()
+   {
+      return numerator;
+   }
+
+   public void setNumerator(int num)
+   {
+      numerator=num;
+   }
+  
+   public int getDenominator()
+   {
+      return denominator;
+   }
+
+  
+   public void setDenominator(int den)
+   {
+      denominator=den;
+   }   
+   public Fraction add(Fraction b)
+   {
+      // check preconditions
+      if ((denominator == 0) || (b.denominator == 0))
+         throw new IllegalArgumentException("invalid denominator");
+      // find lowest common denominator
+      int common = lcd(denominator, b.denominator);
+      // convert fractions to lcd
+      Fraction commonA = new Fraction(1,1);
+      Fraction commonB = new Fraction(1,1);
+      commonA = convert(common);
+      commonB = b.convert(common);
+      // create new fraction to return as sum
+      Fraction sum = new Fraction(1,1);
+      // calculate sum
+      sum.numerator = commonA.numerator + commonB.numerator;
+      sum.denominator = common;
+      // reduce the resulting fraction
+      sum = sum.reduce();
+      return sum;
+   }  
+   public Fraction subtract(Fraction b)
+   {
+      // check preconditions
+      if ((denominator == 0) || (b.denominator == 0))
+         throw new IllegalArgumentException("invalid denominator");
+      // find lowest common denominator
+      int common = lcd(denominator, b.denominator);
+      // convert fractions to lcd
+      Fraction commonA = new Fraction(1,1);
+      Fraction commonB = new Fraction(1,1);
+      commonA = convert(common);
+      commonB = b.convert(common);
+      // create new fraction to return as difference
+      Fraction diff = new Fraction(1,1);
+      // calculate difference
+      diff.numerator = commonA.numerator - commonB.numerator;
+      diff.denominator = common;
+      // reduce the resulting fraction
+      diff = diff.reduce();
+      return diff;
+   }   
+   public Fraction multiply(Fraction b)
+   {
+      // check preconditions
+      if ((denominator == 0) || (b.denominator == 0))
+         throw new IllegalArgumentException("invalid denominator");
+      // create new fraction to return as product
+      Fraction product = new Fraction(1,1);
+      // calculate product
+      product.numerator = numerator * b.numerator;
+      product.denominator = denominator * b.denominator;
+      // reduce the resulting fraction
+      product = product.reduce();
+      return product;
+   }
+   public Fraction divide(Fraction b)
+   {
+      // check preconditions
+      if ((denominator == 0) || (b.numerator == 0))
+         throw new IllegalArgumentException("invalid denominator");
+      // create new fraction to return as result
+      Fraction result = new Fraction(1,1);
+      // calculate result
+      result.numerator = numerator * b.denominator;
+      result.denominator = denominator * b.numerator;
+      // reduce the resulting fraction
+      result = result.reduce();
+      return result;
+   }
+
+   
+  
+  
+   private int lcd(int denom1, int denom2)
+   {
+      int factor = denom1;
+      while ((denom1 % denom2) != 0)
+         denom1 += factor;
+      return denom1;
+   }  
+   private int gcd(int denom1, int denom2)
+   {
+      int factor = denom2;
+      while (denom2 != 0) {
+         factor = denom2;
+         denom2 = denom1 % denom2;
+         denom1 = factor;
+      }
+      return denom1;
+   }
+
+   
+   private Fraction convert(int common)
+   {
+      Fraction result = new Fraction(1,1);
+      int factor = common / denominator;
+      result.numerator = numerator * factor;
+      result.denominator = common;
+      return result;
+   }
+
+   
+   private Fraction reduce()
+   {
+      Fraction result = new Fraction(1,1);
+      int common = 0;
+      // get absolute values for numerator and denominator
+      int num = Math.abs(numerator);
+      int den = Math.abs(denominator);
+      // figure out which is less, numerator or denominator
+      if (num > den)
+         common = gcd(num, den);
+      else if (num < den)
+         common = gcd(den, num);
+      else  // if both are the same, don't need to call gcd
+         common = num;
+
+      // set result based on common factor derived from gcd
+      result.numerator = numerator / common;
+      result.denominator = denominator / common;
+      return result;
+   }
+   
+   public static void main(String args[])
+   {
+     Fraction a=new Fraction(3, 9);
+     Fraction b=new Fraction(2, 4);
+     a=a.multiply(b);
+     System.out.println(a.numerator+" "+a.denominator);
+   }
+
+}

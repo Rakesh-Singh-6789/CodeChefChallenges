@@ -6,7 +6,6 @@
 <fullyQualifiedTypeName name="java.util.Collection"/>
 <fullyQualifiedTypeName name="java.lang.Package"/>
 <fullyQualifiedTypeName name="java.util.stream.Stream"/>
-<fullyQualifiedTypeName name="java.lang.Character"/>
 <fullyQualifiedTypeName name="marchLongChallengePackage.PiyushQuest1.FastReader"/>
 <fullyQualifiedTypeName name="javax.print.attribute.HashPrintServiceAttributeSet"/>
 <fullyQualifiedTypeName name="java.util.Map.Entry"/>
@@ -27,7 +26,6 @@
 <fullyQualifiedTypeName name="BinaryTrees.ArrayListHeadLevelWise.Node"/>
 <fullyQualifiedTypeName name="maxDifferenceCandy"/>
 <fullyQualifiedTypeName name="Assignment1.CheckFirst.BinaryTreeNode"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="Assignment1.FreqCount"/>
 <fullyQualifiedTypeName name="Assignment1.FreqCount.myCount"/>
 <fullyQualifiedTypeName name="java.io.BufferedOutputStream"/>
@@ -35,7 +33,6 @@
 <fullyQualifiedTypeName name="java.io.OutputStreamWriter"/>
 <fullyQualifiedTypeName name="Break.Reader"/>
 <fullyQualifiedTypeName name="javax.swing.plaf.basic.BasicInternalFrameTitlePane.MaximizeAction"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="CodeGladiatorQ2.Reader"/>
 <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
 <fullyQualifiedTypeName name="java.util.Stack"/>
@@ -50,11 +47,16 @@
 <fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
-<fullyQualifiedTypeName name="java.util.StringTokenizer"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.math.BigInteger"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.util.StringTokenizer"/>
+<fullyQualifiedTypeName name="java.lang.Character"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="javax.rmi.ssl.SslRMIClientSocketFactory"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="Fraction"/>
 </qualifiedTypeNameHistroy>
