@@ -1,0 +1,62 @@
+
+public class level2B {
+
+	public static void main(String[] args) {
+		System.out.println(solution(10));
+		System.out.println(solution(143));
+	}
+
+    public static int solution(int total_lambs) {
+        //Your code here
+        /*if(total_lambs==1)
+         return 0;*/
+        
+        return ungenerous(total_lambs)-genrous(total_lambs);
+    }
+	private static int genrous(int total_lambs) {
+		// TODO Auto-generated method stub
+		int ans=1;
+		long first=0,current=1,sum=0;
+		total_lambs-=1;
+		while(total_lambs>0){
+			//System.out.println("insideGENEROUS");
+			if(total_lambs<2*current){
+				sum=current+first;
+				if(total_lambs>=sum){
+					ans+=1;
+				}
+				break;		
+			}
+			ans+=1;			
+			first=current;
+			current=2*current;
+			total_lambs-=current;		
+			
+		}
+		
+		
+		return ans;
+	}
+	
+	private static int ungenerous(int total_lambs) {
+		// TODO Auto-generated method stub
+		int ans=1;
+		long first=0;
+		long current=1;
+		total_lambs-=1;
+		long sum=0;
+		while(total_lambs>0){
+			sum=first+current;
+			if(total_lambs<sum){
+				break;
+			}
+			ans+=1;
+			first=current;
+			current=sum;
+			total_lambs-=current;
+		}	
+		
+		return ans;
+	}
+
+}

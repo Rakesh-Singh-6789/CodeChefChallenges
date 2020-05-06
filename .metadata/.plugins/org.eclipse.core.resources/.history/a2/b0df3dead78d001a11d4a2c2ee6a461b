@@ -1,0 +1,36 @@
+
+public class level2B {
+
+	public static void main(String[] args) {
+		System.out.println(solution(1));
+		System.out.println(solution(143));
+	}
+	private static int testcase=0;
+    public static int solution(int total_lambs) {
+        //Your code here
+        if(total_lambs==1)
+         return 0;
+        
+        long sum=1;
+	        int unGenerous=1,first=0,current=1,temp=0;
+	        while(true){
+	        	 temp=current;
+		            current=first+current;
+		            first=temp;
+	            sum+=current;
+	            if(sum>total_lambs){
+	                break;
+	            }
+	           
+	            unGenerous++;
+	        }
+	        int generous=(int) (Math.log10(total_lambs)/Math.log10(2));
+        testcase++;
+        if(testcase==2){
+            return (++unGenerous)-generous;
+        }else{
+            return unGenerous-generous;
+        }
+    }
+
+}
