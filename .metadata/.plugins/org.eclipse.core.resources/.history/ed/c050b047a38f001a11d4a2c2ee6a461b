@@ -1,0 +1,47 @@
+import java.math.BigInteger;
+
+public class level3B_Bombs {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+       System.out.println(solution("2", "4"));
+	}
+	 /*while(true) {
+         if(m.compareTo(BigInteger.ONE) == -1 || f.compareTo(BigInteger.ONE) == -1)
+             return "impossible";
+         else if(m.compareTo(BigInteger.ONE) == 0 && f.compareTo(BigInteger.ONE) == 0)
+             return String.valueOf(cycles);
+         else {
+             if(m.compareTo(f) == 1) {
+                 m = m.subtract(f);
+             } else {
+                 f = f.subtract(m);
+             }
+             cycles++;
+         }*/
+	 public static String solution(String x, String y) {
+	        // Your code here
+		 BigInteger biM=new BigInteger(x);
+		 BigInteger biF=new BigInteger(y);
+		 BigInteger bi1=BigInteger.ONE;
+		 BigInteger biAns=BigInteger.ZERO;
+		 String ansImp="impossible";
+		 while(true){
+			 if(biM.compareTo(bi1)==-1 || biF.compareTo(bi1)==-1){
+				 return ansImp;
+			 }else if(biM.compareTo(bi1)==0 && biF.compareTo(bi1)==0){
+				 return biAns.toString();
+			 }else{
+				 if(biM.compareTo(biF)==1){
+					 biM=biM.subtract(biF);
+				 }else{
+					 biF=biF.subtract(biM);
+				 }
+			 }
+			 biAns=biAns.add(bi1);
+			 
+		 }
+
+	    }
+
+}
