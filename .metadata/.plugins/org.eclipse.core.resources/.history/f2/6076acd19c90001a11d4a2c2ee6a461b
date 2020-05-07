@@ -76,7 +76,7 @@ public class level3b_2_Bombs {
 			}
             //System.out.println(biF+" "+bi1);
 			if(biF.compareTo(bi1)==0){
-				//System.out.println(" hit IF ");
+				System.out.println(" hit IF ");
 				biAns=biAns.add(biM);
 				biAns=biAns.subtract(bi1);
 				return (biAns).toString();

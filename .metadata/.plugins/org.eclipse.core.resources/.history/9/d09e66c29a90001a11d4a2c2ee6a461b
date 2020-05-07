@@ -66,32 +66,33 @@ public class level3b_2_Bombs {
 
 		BigInteger biTempF;
 		BigInteger biTempM;
-		BigInteger biMbyF;
-		while(!(biM.compareTo(bi1)==0 && biF.compareTo(bi1)==0)){
+		while(true){
 			
-		 
+			if((biM.compareTo(bi1)==0 && biF.compareTo(bi1)==0)){
+				return biAns.toString();
+			}
 			
-		   if(biF.compareTo(bi1)==-1 || biM.compareTo(bi1)==-1){
+			
+			if(biF.compareTo(bi0)<=0 || biM.compareTo(bi0)<=0){
 				return ansImp;
 			}
-            //System.out.println(biF+" "+bi1);
+            System.out.println(biF+" "+bi1);
 			if(biF.compareTo(bi1)==0){
-				//System.out.println(" hit IF ");
+				System.out.println(" hit IF ");
 				biAns=biAns.add(biM);
 				biAns=biAns.subtract(bi1);
 				return (biAns).toString();
 			}else{
-				biMbyF=biM.divide(biF);
-				biAns=biAns.add(biMbyF);
+				biAns=biAns.add(biM.divide(biF));
 				biTempF=new  BigInteger(biF.toString());
 				biTempM=new  BigInteger(biM.toString());
 
 				biM=biTempF;
-				biF=biTempM.mod(biTempF);
+				biF=biM.mod(biTempF);
 			}
 
 		}
-		return biAns.toString(); 
+		//return biAns.toString(); 
 
 	}
 	private static BigInteger biGCD(BigInteger biM, BigInteger biF) {

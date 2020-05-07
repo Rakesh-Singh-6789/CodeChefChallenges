@@ -1,0 +1,30 @@
+package Assignment1;
+
+
+import java.io.*;
+import java.math.BigInteger;
+import java.util.*;
+
+
+
+public class CheckFirst {
+
+
+	public static int totalSum=0;
+	public static int count=0;
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		/*for(int i=8;i<=16;i++){
+			int a=(int)Math.round((Math.log10(i)/Math.log10(2)));
+			System.out.println(i+" "+a);;
+
+		}*/
+		
+		
+		BigInteger bi5=new BigInteger("5");
+		BigInteger bi2=new BigInteger("2");
+		
+		System.out.println(bi5.divide(bi2));
+	}
+	
+}

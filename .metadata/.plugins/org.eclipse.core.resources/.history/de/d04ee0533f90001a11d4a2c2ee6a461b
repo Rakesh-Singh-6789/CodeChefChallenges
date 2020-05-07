@@ -1,0 +1,23 @@
+package Assignment1;
+
+
+import java.io.*;
+import java.util.*;
+
+
+
+public class CheckFirst {
+
+
+	public static int totalSum=0;
+	public static int count=0;
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		for(int i=8;i<=16;i++){
+			int a=(int)Math.round((Math.log10(i)/Math.log10(2)));
+			System.out.println(i+" "+a);;
+
+		}
+	}
+	
+}
