@@ -25,7 +25,7 @@ public class level3b_2_Bombs {
              }
              cycles++;
          }*/
-
+	private static BigInteger biTotal;
 	public static String solution(String x, String y) {
 		// Your code here
 		BigInteger biM=new BigInteger(x);
@@ -50,7 +50,18 @@ public class level3b_2_Bombs {
 			 biAns=biAns.add(bi1);
 
 		 }*/
-		
+		/*def answer(M, F):
+		    m, f = long(M), long(F)
+		    total = 0
+		    while not (m == 1 and f == 1):
+		        if f <= 0 or m <= 0:
+		            return "impossible"
+		        if f == 1:
+		            return str(total + m - 1)
+		        else:
+		            total += long(m/f)
+		            m, f = f, m % f
+		    return str(total)*/
 		BigInteger biAns=BigInteger.ZERO;
 
 		BigInteger biTempF;
@@ -83,5 +94,14 @@ public class level3b_2_Bombs {
 		return biAns.toString(); 
 
 	}
-	
+	private static BigInteger biGCD(BigInteger biM, BigInteger biF) {
+		// TODO Auto-generated method stub
+		biTotal=biTotal.add(BigInteger.ONE);
+		if(biF.compareTo(BigInteger.ZERO)==0){
+			return biM;
+		}
+
+		return biGCD(biF,biM.mod(biF));
+	}
+
 }

@@ -2,30 +2,30 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="new Fraction(1,1);" key="selection"/>
+		<item value="totalDividings[" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="noOfDoubles"/>
+			<item value="noOfCombinations"/>
+			<item value="arr"/>
 			<item value="new Fraction();"/>
 			<item value="&apos;"/>
 			<item value="int "/>
 			<item value="Integer"/>
 			<item value="int"/>
-			<item value="cStack"/>
-			<item value="JStack"/>
-			<item value="getcouple"/>
 		</list>
 		<list key="replacehistory">
+			<item value="totalDividings["/>
+			<item value="ans"/>
+			<item value="l"/>
 			<item value="new Fraction(1,1);"/>
 			<item value="&quot;"/>
 			<item value="long"/>
 			<item value="Long"/>
 			<item value="CameronWorkStack"/>
-			<item value="JamieWorkStack"/>
-			<item value="changePerson"/>
-			<item value="isImpossible"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
